@@ -1,14 +1,15 @@
-import { Outlet } from "react-router"
+import { Outlet } from 'react-router';
+import Navbar from '../shared/Navbar';
+import Footer from '../shared/Footer';
 
 const MainLayout = () => {
   return (
     <div>
-
-      <h1>navbar</h1>
-      <Outlet/>
-      <h1>footer</h1>
+      <Navbar />
+      <Outlet />
+      <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default MainLayout
+export default MainLayout;
