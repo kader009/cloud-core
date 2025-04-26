@@ -1,76 +1,73 @@
-import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router';
+import { fetchProductById } from '../redux/feature/singleProductSlice';
+import Spinner from './Spinner';
 
 const ProductDetail = () => {
   const { id } = useParams();
-  const [SingleProduct, setSingleProduct] = useState([]);
+  const dispatch = useDispatch();
+  const { product, loading } = useSelector((state) => state.singleProduct);
+  console.log(product);
 
   useEffect(() => {
-    const fetchProduct = async () => {
-      try {
-        const response = await axios.get(
-          `https://admin.refabry.com/api/all/product/get`
-        );
+    dispatch(fetchProductById(id));
+  }, [dispatch, id]);
 
-        const allproduct = response.data.data.data;
-        const single = allproduct.find((p) => p.id === parseInt(id, 10));
-
-        if (!single) {
-          console.warn(`Product with id=${id} not found in list.`);
-        }
-
-        setSingleProduct(single);
-      } catch (error) {
-        console.error('There was an error fetching the food data!', error);
-      }
-    };
-
-    fetchProduct();
-  }, [id]);
+  if (loading === 'loading') {
+    return <p className="text-center">Loading…</p>;
+  }
 
   return (
     <div>
-      <h1 className='text-center text-2xl font-bold my-4'>Product Details</h1>
-      <div className="max-w-4xl mx-auto p-6">
-        <div className="bg-white rounded-2xl shadow-lg overflow-hidden lg:flex">
-          <div className="lg:w-1/2 h-96">
-            <img
-              src={`https://admin.refabry.com/storage/product/${SingleProduct.image}`}
-              alt={SingleProduct.name}
-              loading="lazy"
-              className="w-full h-full object-cover object-top"
-            />
-          </div>
-          <div className="p-8 lg:w-1/2 flex flex-col justify-between">
-            <div>
-              <h1 className="text-3xl font-bold text-gray-800 capitalize">
-                {SingleProduct.name}
-              </h1>
-              <span className="text-[18px]">
-                Discount: {SingleProduct.discount_amount}$
-              </span>
-              {SingleProduct.category && (
-                <p className="text-gray-600 mt-1">
-                  Category: {SingleProduct.category.name}
-                </p>
-              )}
-              <p className="text-gray-700 mt-4 whitespace-pre-line">
-                {SingleProduct.short_desc}
-              </p>
-            </div>
-            <div className="mt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-              <span className="text-[22px] font-semibold text-blue-500">
-                Price: {SingleProduct.price}$
-              </span>
+      {loading ? (
+        <Spinner />
+      ) : (
+        <>
+          <h1 className="text-center text-2xl font-bold my-4">
+            Product Details
+          </h1>
+          <div className="max-w-4xl mx-auto p-6">
+            <div className="bg-white rounded-2xl shadow-lg overflow-hidden lg:flex">
+              <div className="lg:w-1/2 h-96">
+                <img
+                  src={`https://admin.refabry.com/storage/product/${product?.image}`}
+                  alt={product?.name}
+                  loading="lazy"
+                  className="w-full h-full object-cover object-top"
+                />
+              </div>
+              <div className="p-8 lg:w-1/2 flex flex-col justify-between">
+                <div>
+                  <h1 className="text-3xl font-bold text-gray-800 capitalize">
+                    {product?.name}
+                  </h1>
+                  <span className="text-[18px]">
+                    Discount: {product?.discount_amount}$
+                  </span>
+                  {product?.category && (
+                    <p className="text-gray-600 mt-1">
+                      Category: {product?.category.name}
+                    </p>
+                  )}
+                  <p className="text-gray-700 mt-4 whitespace-pre-line">
+                    {product?.short_desc}
+                  </p>
+                </div>
+                <div className="mt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                  <span className="text-[20px] font-semibold text-blue-500">
+                    Price: {product?.price}$
+                  </span>
 
-              <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full transition duration-300">
-                Add to Cart
-              </button>
+                  <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full transition duration-300">
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
+        </>
+      )}
     </div>
   );
 };
