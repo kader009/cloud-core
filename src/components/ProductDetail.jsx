@@ -38,7 +38,7 @@ const ProductDetail = () => {
                   <h1 className="text-3xl font-bold text-gray-800 capitalize">
                     {product?.name}
                   </h1>
-                  <span className="text-[18px] text-orange-600 font-bold">
+                  <span className="text-[18px] text-orange-600 font-bold my-3">
                     Discount: {product?.discount_amount}$
                   </span>
                   {product?.category && (

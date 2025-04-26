@@ -96,7 +96,7 @@ const Footer = () => {
         {/* Bottom Line */}
         <hr className="my-6 border-gray-700" />
         <p className="text-center text-sm text-gray-500">
-          &copy; {new Date().getFullYear()} Cloud Core. Developed by Md Abdul
+          &copy; {new Date().getFullYear()} Cloud Core. Developed by ❤️ Md Abdul
           Kader Molla. All rights reserved.
         </p>
       </div>
