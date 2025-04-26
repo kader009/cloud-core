@@ -37,6 +37,7 @@ const ProductDetail = () => {
             <img
               src={`https://admin.refabry.com/storage/product/${SingleProduct.image}`}
               alt={SingleProduct.name}
+              loading='lazy'
               className="w-full h-full object-cover object-top"
             />
           </div>
@@ -45,6 +46,9 @@ const ProductDetail = () => {
               <h1 className="text-3xl font-bold text-gray-800 capitalize">
                 {SingleProduct.name}
               </h1>
+              <span className="text-xl">
+                Discount: {SingleProduct.discount_amount}$
+              </span>
               {SingleProduct.category && (
                 <p className="text-gray-600 mt-1">
                   Category: {SingleProduct.category.name}
@@ -53,11 +57,13 @@ const ProductDetail = () => {
               <p className="text-gray-700 mt-4 whitespace-pre-line">
                 {SingleProduct.short_desc}
               </p>
+              
             </div>
             <div className="mt-6 flex items-center justify-between">
               <span className="text-2xl font-semibold text-blue-600">
-                ${SingleProduct.price}
+                Price: {SingleProduct.price}$
               </span>
+              
               <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full transition duration-300">
                 Add to Cart
               </button>
