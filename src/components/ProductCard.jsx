@@ -11,21 +11,26 @@ const ProductCard = ({ product }) => {
         <img
           src={`https://admin.refabry.com/storage/product/${image}`}
           alt={name}
-          loading='lazy'
+          loading="lazy"
           className="w-full h-full object-cover object-top"
         />
       </div>
 
       {/* Body Section */}
       <div className="p-6 text-center">
-        <h2 className="text-2xl font-bold text-gray-800 mb-2 capitalize">{name}</h2>
-        <p className="text-gray-500 text-base mb-1 font-semibold">Price: {price}$</p>
-        <p className="text-gray-500 text-base mb-3">🟢 In Stock: {stock}</p>
+        <h2 className="text-2xl font-bold text-gray-800 mb-2 capitalize">
+          {name}
+        </h2>
+        <p className="text-gray-500 text-base mb-1 font-semibold">
+          Price: {price}$
+        </p>
+        <p className="text-orange-600 text-base mb-3 font-semibold">
+          🟢 In Stock: {stock}
+        </p>
         <Link to={`/product/${product.id}`}>
-        
-        <button className="mt-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-full transition-all duration-300">
-          View Product
-        </button>
+          <button className="mt-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-full transition-all duration-300">
+            View Product
+          </button>
         </Link>
       </div>
     </div>

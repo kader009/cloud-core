@@ -38,7 +38,7 @@ const ProductDetail = () => {
                   <h1 className="text-3xl font-bold text-gray-800 capitalize">
                     {product?.name}
                   </h1>
-                  <span className="text-[18px]">
+                  <span className="text-[18px] text-orange-600 font-bold">
                     Discount: {product?.discount_amount}$
                   </span>
                   {product?.category && (
@@ -51,7 +51,7 @@ const ProductDetail = () => {
                   </p>
                 </div>
                 <div className="mt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-                  <span className="text-[20px] font-semibold text-blue-500">
+                  <span className="text-[20px] font-semibold text-gray-500">
                     Price: {product?.price}$
                   </span>
 

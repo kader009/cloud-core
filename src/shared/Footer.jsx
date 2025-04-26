@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = () => {
   return (
     <footer className="bg-gray-900 text-gray-300 py-10 mt-16">
-      <div className=" mx-auto px-4 sm:px-6 lg:px-16">
+      <div className="mx-auto px-4 sm:px-6 lg:px-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* About Cloud Core */}
           <div>
