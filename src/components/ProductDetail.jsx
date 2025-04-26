@@ -31,13 +31,14 @@ const ProductDetail = () => {
 
   return (
     <div>
+      <h1 className='text-center text-2xl font-bold my-4'>Product Details</h1>
       <div className="max-w-4xl mx-auto p-6">
         <div className="bg-white rounded-2xl shadow-lg overflow-hidden lg:flex">
           <div className="lg:w-1/2 h-96">
             <img
               src={`https://admin.refabry.com/storage/product/${SingleProduct.image}`}
               alt={SingleProduct.name}
-              loading='lazy'
+              loading="lazy"
               className="w-full h-full object-cover object-top"
             />
           </div>
@@ -46,7 +47,7 @@ const ProductDetail = () => {
               <h1 className="text-3xl font-bold text-gray-800 capitalize">
                 {SingleProduct.name}
               </h1>
-              <span className="text-xl">
+              <span className="text-[18px]">
                 Discount: {SingleProduct.discount_amount}$
               </span>
               {SingleProduct.category && (
@@ -57,13 +58,12 @@ const ProductDetail = () => {
               <p className="text-gray-700 mt-4 whitespace-pre-line">
                 {SingleProduct.short_desc}
               </p>
-              
             </div>
-            <div className="mt-6 flex items-center justify-between">
-              <span className="text-2xl font-semibold text-blue-600">
+            <div className="mt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+              <span className="text-[22px] font-semibold text-blue-500">
                 Price: {SingleProduct.price}$
               </span>
-              
+
               <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full transition duration-300">
                 Add to Cart
               </button>

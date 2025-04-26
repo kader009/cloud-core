@@ -6,7 +6,7 @@ const Navbar = () => {
 
   return (
     <nav className="bg-white shadow-md sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className=" mx-auto px-4 sm:px-6 lg:px-16">
         <div className="flex justify-between h-16 items-center">
           {/* Website Name */}
           <div className="text-xl font-bold "><Link to='/'>Cloud Core</Link></div>
@@ -14,7 +14,7 @@ const Navbar = () => {
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-6">
             <Link to="/" className="text-gray-700 hover:text-blue-600 transition">Home</Link>
-            <a href="#about" className="text-gray-700 hover:text-blue-600 transition">About</a>
+            <a href="#" className="text-gray-700 hover:text-blue-600 transition">About</a>
           </div>
 
           {/* Mobile Menu Button */}
