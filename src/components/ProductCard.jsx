@@ -19,7 +19,7 @@ const ProductCard = ({ product }) => {
       {/* Body Section */}
       <div className="p-6 text-center">
         <h2 className="text-2xl font-bold text-gray-800 mb-2 capitalize">{name}</h2>
-        <p className="text-gray-500 text-base mb-1">Price: {price}$</p>
+        <p className="text-gray-500 text-base mb-1 font-semibold">Price: {price}$</p>
         <p className="text-gray-500 text-base mb-3">🟢 In Stock: {stock}</p>
         <Link to={`/product/${product.id}`}>
         

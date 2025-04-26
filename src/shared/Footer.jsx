@@ -20,27 +20,27 @@ const Footer = () => {
           {/* Products */}
           <div>
             <h2 className="text-lg font-semibold text-white mb-2">
-              Our Services
+              Shop Categories
             </h2>
             <ul className="space-y-1">
               <li>
-                <a href="#" className="hover:text-white">
-                  Cloud Hosting Solutions
+                <a href="/category/electronics" className="hover:text-white">
+                  Electronics
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white">
-                  Digital Product Marketplace
+                <a href="/category/fashion" className="hover:text-white">
+                  Fashion & Apparel
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white">
-                  Secure Payment Integration
+                <a href="/category/home-kitchen" className="hover:text-white">
+                  Home & Kitchen
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white">
-                  Real-Time Order Tracking
+                <a href="/category/beauty" className="hover:text-white">
+                  Beauty & Wellness
                 </a>
               </li>
             </ul>

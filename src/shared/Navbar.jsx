@@ -13,8 +13,8 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-6">
-            <Link to="/" className="text-gray-700 hover:text-blue-600 transition">Home</Link>
-            <a href="#" className="text-gray-700 hover:text-blue-600 transition">About</a>
+            <Link to="/" className="text-gray-700 hover:text-blue-600 transition font-semibold">Home</Link>
+            <a href="#" className="text-gray-700 hover:text-blue-600 transition font-semibold">About</a>
           </div>
 
           {/* Mobile Menu Button */}

@@ -14,10 +14,6 @@ const ProductDetail = () => {
     dispatch(fetchProductById(id));
   }, [dispatch, id]);
 
-  if (loading === 'loading') {
-    return <p className="text-center">Loading…</p>;
-  }
-
   return (
     <div>
       {loading ? (
